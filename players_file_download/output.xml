@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.11.4 on darwin)" generated="20230726 22:49:25.355" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Download Players File Rf" source="/Users/martaciesla/PycharmProjects/footballscouts_robotframework/players_file_download/test_download_players_file_rf.robot">
+<test id="s1-t1" name="Download CSV file of all players stored" line="19">
+<kw name="Open login page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 22:49:25.411" level="INFO">Opening browser 'Chrome' to base url 'https://scouts-test.futbolkolektyw.pl/en'.</msg>
+<msg timestamp="20230726 22:49:25.411" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230726 22:49:25.411" endtime="20230726 22:49:27.073"/>
+</kw>
+<status status="PASS" starttime="20230726 22:49:25.411" endtime="20230726 22:49:27.073"/>
+</kw>
+<kw name="Type in email and password">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${EMAILINPUT}</arg>
+<arg>user01@getnada.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 22:49:27.073" level="INFO">Typing text 'user01@getnada.com' into text field 'xpath=//*[@id='login']'.</msg>
+<status status="PASS" starttime="20230726 22:49:27.073" endtime="20230726 22:49:27.191"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>${PASSWORDINPUT}</arg>
+<arg>Test-1234</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 22:49:27.191" level="INFO">Typing password into text field 'xpath=//*[@id='password']'.</msg>
+<msg timestamp="20230726 22:49:27.209" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230726 22:49:27.241" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230726 22:49:27.191" endtime="20230726 22:49:27.241"/>
+</kw>
+<status status="PASS" starttime="20230726 22:49:27.073" endtime="20230726 22:49:27.241"/>
+</kw>
+<kw name="Click submit button">
+<kw name="Click Button" library="Selenium2Library">
+<arg>${SIGNINBUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 22:49:27.241" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20230726 22:49:27.241" endtime="20230726 22:49:27.275"/>
+</kw>
+<status status="PASS" starttime="20230726 22:49:27.241" endtime="20230726 22:49:27.275"/>
+</kw>
+<kw name="Click players dashboard">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${PLAYERSBUTTON}</arg>
+<arg>timeout=100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 22:49:27.275" endtime="20230726 22:49:31.385"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${PLAYERSBUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 22:49:31.386" level="INFO">Clicking element 'xpath=//ul[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230726 22:49:31.386" endtime="20230726 22:49:31.406"/>
+</kw>
+<status status="PASS" starttime="20230726 22:49:27.275" endtime="20230726 22:49:31.406"/>
+</kw>
+<kw name="Click download button">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${PLAYERSDOWNLOADBUTTON}</arg>
+<arg>timeout=100</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 22:49:31.406" endtime="20230726 22:49:33.337"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${PLAYERSDOWNLOADBUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 22:49:33.337" level="INFO">Clicking element 'xpath=//button[contains(@data-testid,'Download CSV')]'.</msg>
+<status status="PASS" starttime="20230726 22:49:33.337" endtime="20230726 22:49:33.362"/>
+</kw>
+<status status="PASS" starttime="20230726 22:49:31.406" endtime="20230726 22:49:33.362"/>
+</kw>
+<kw name="Download CSV file">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230726 22:49:38.363" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230726 22:49:33.362" endtime="20230726 22:49:38.363"/>
+</kw>
+<kw name="Normalize Path" library="OperatingSystem">
+<var>${path}</var>
+<arg>~/Downloads</arg>
+<doc>Normalizes the given path.</doc>
+<msg timestamp="20230726 22:49:38.365" level="INFO">${path} = /Users/martaciesla/Downloads</msg>
+<status status="PASS" starttime="20230726 22:49:38.364" endtime="20230726 22:49:38.365"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${RAND}</var>
+<arg>${RANDOM_NR}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230726 22:49:38.366" level="INFO">${RAND} = 54</msg>
+<status status="PASS" starttime="20230726 22:49:38.365" endtime="20230726 22:49:38.366"/>
+</kw>
+<kw name="Move File" library="OperatingSystem">
+<arg>${path}/tableDownload.csv</arg>
+<arg>/Users/martaciesla/PycharmProjects/footballscouts_robotframework/players_file_download/all_players_db${RAND}.csv</arg>
+<doc>Moves the source file into the destination.</doc>
+<msg timestamp="20230726 22:49:38.368" level="INFO" html="true">Moved file from '&lt;a href="file:///Users/martaciesla/Downloads/tableDownload.csv"&gt;/Users/martaciesla/Downloads/tableDownload.csv&lt;/a&gt;' to '&lt;a href="file:///Users/martaciesla/PycharmProjects/footballscouts_robotframework/players_file_download/all_players_db54.csv"&gt;/Users/martaciesla/PycharmProjects/footballscouts_robotframework/players_file_download/all_players_db54.csv&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230726 22:49:38.366" endtime="20230726 22:49:38.368"/>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>/Users/martaciesla/PycharmProjects/footballscouts_robotframework/players_file_download/all_players_db${RAND}.csv</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20230726 22:49:38.369" level="INFO" html="true">File '&lt;a href="file:///Users/martaciesla/PycharmProjects/footballscouts_robotframework/players_file_download/all_players_db54.csv"&gt;/Users/martaciesla/PycharmProjects/footballscouts_robotframework/players_file_download/all_players_db54.csv&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230726 22:49:38.368" endtime="20230726 22:49:38.369"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>test_download_players_file.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230726 22:49:38.532" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="test_download_players_file.png"&gt;&lt;img src="test_download_players_file.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230726 22:49:38.369" endtime="20230726 22:49:38.532"/>
+</kw>
+<status status="PASS" starttime="20230726 22:49:33.362" endtime="20230726 22:49:38.532"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 22:49:38.532" endtime="20230726 22:49:38.602"/>
+</kw>
+<status status="PASS" starttime="20230726 22:49:25.411" endtime="20230726 22:49:38.602"/>
+</test>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20230726 22:49:25.356" endtime="20230726 22:49:38.602"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Download Players File Rf">Test Download Players File Rf</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

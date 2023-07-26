@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.11.4 on darwin)" generated="20230726 22:50:22.985" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Open Last Created Match Rf" source="/Users/martaciesla/PycharmProjects/footballscouts_robotframework/open_last_created_match/test_open_last_created_match_rf.robot">
+<test id="s1-t1" name="Login to the system" line="15">
+<kw name="Open login page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 22:50:23.039" level="INFO">Opening browser 'Chrome' to base url 'https://scouts-test.futbolkolektyw.pl/en'.</msg>
+<msg timestamp="20230726 22:50:23.039" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230726 22:50:23.039" endtime="20230726 22:50:24.667"/>
+</kw>
+<status status="PASS" starttime="20230726 22:50:23.039" endtime="20230726 22:50:24.667"/>
+</kw>
+<kw name="Type in email and password">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAILINPUT}</arg>
+<arg>user01@getnada.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 22:50:24.668" level="INFO">Typing text 'user01@getnada.com' into text field 'xpath=//*[@id='login']'.</msg>
+<status status="PASS" starttime="20230726 22:50:24.668" endtime="20230726 22:50:24.782"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORDINPUT}</arg>
+<arg>Test-1234</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 22:50:24.783" level="INFO">Typing password into text field 'xpath=//*[@id='password']'.</msg>
+<msg timestamp="20230726 22:50:24.801" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230726 22:50:24.830" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230726 22:50:24.782" endtime="20230726 22:50:24.830"/>
+</kw>
+<status status="PASS" starttime="20230726 22:50:24.667" endtime="20230726 22:50:24.830"/>
+</kw>
+<kw name="Click submit button">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SIGNINBUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230726 22:50:24.830" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20230726 22:50:24.830" endtime="20230726 22:50:24.863"/>
+</kw>
+<status status="PASS" starttime="20230726 22:50:24.830" endtime="20230726 22:50:24.863"/>
+</kw>
+<kw name="Open last created match">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACTIVITYLASTCREATEDMATCH}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 22:50:24.863" endtime="20230726 22:50:28.925"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACTIVITYLASTCREATEDMATCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 22:50:28.925" level="INFO">Clicking element 'xpath=//a[3]/button'.</msg>
+<status status="PASS" starttime="20230726 22:50:28.925" endtime="20230726 22:50:28.945"/>
+</kw>
+<status status="PASS" starttime="20230726 22:50:24.863" endtime="20230726 22:50:28.945"/>
+</kw>
+<kw name="Assert element text">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${FORMSUBMITBUTTON}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 22:50:28.945" endtime="20230726 22:50:29.372"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>${FORMSUBMITBUTTON}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230726 22:50:29.372" endtime="20230726 22:50:29.383"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${FORMSUBMITBUTTON}</arg>
+<arg>SUBMIT</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230726 22:50:29.383" level="INFO">Verifying element 'xpath=//button[@type='submit']/span' contains exact text 'SUBMIT'.</msg>
+<status status="PASS" starttime="20230726 22:50:29.383" endtime="20230726 22:50:29.390"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>alert_open_last_created_match.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230726 22:50:29.555" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="alert_open_last_created_match.png"&gt;&lt;img src="alert_open_last_created_match.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230726 22:50:29.390" endtime="20230726 22:50:29.555"/>
+</kw>
+<status status="PASS" starttime="20230726 22:50:28.945" endtime="20230726 22:50:29.555"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 22:50:29.556" endtime="20230726 22:50:29.627"/>
+</kw>
+<status status="PASS" starttime="20230726 22:50:23.039" endtime="20230726 22:50:29.627"/>
+</test>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20230726 22:50:22.985" endtime="20230726 22:50:29.628"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Open Last Created Match Rf">Test Open Last Created Match Rf</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
