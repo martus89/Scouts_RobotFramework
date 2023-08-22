@@ -1,35 +1,18 @@
 *** Settings ***
 Library     SeleniumLibrary
 Documentation   Suite description
+Resource        resources.robot
+Test Setup      Run Keywords    Login to the system EN
 
 *** Variables ***
-${LOGIN URL}            https://scouts-test.futbolkolektyw.pl/en
-${BROWSER}              Chrome
-${EMAILINPUT}           xpath=//*[@id='login']
-${PASSWORDINPUT}        xpath=//*[@id='password']
-${SIGNINBUTTON}         xpath=//button[@type='submit']
 ${SIGNOUTBUTTON}        xpath=//div[1]/ul[2]/div[2]
 
 *** Test Cases ***
-Login to the system
-    Open login page
-    Type in email and password
-    Click submit button
-    Click sign out button
+Logout from the system
     Assert title of page
     [Teardown]  Close browser
 
 *** Keywords ***
-Open login page
-    Open Browser    ${LOGIN URL}  ${BROWSER}
-Type in email and password
-    Input Text      ${EMAILINPUT}       user01@getnada.com
-    Input Password  ${PASSWORDINPUT}    Test-1234
-Click submit button
-    Click Button    ${SIGNINBUTTON}
-    Wait Until Element Is Enabled   ${SIGNOUTBUTTON}  timeout=300
-Click sign out button
-    Click Element                   ${SIGNOUTBUTTON}
 Assert title of page
     Wait Until Element Is Visible   ${SIGNINBUTTON}  timeout=300
     Get Title
