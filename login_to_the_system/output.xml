@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.11.4 on darwin)" generated="20230830 22:23:23.653" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Login To The System Rf" source="/Users/martaciesla/PycharmProjects/robot_framework_football/login_to_the_system/test_login_to_the_system_rf.robot">
+<test id="s1-t1" name="Login to the system with English" line="12">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Login to the system EN</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Log in to the system EN" library="resources">
+<kw name="Open login page" library="resources">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230830 22:23:23.711" level="INFO">Opening browser 'Chrome' to base url 'https://dareit.futbolkolektyw.pl/en'.</msg>
+<status status="PASS" starttime="20230830 22:23:23.711" endtime="20230830 22:23:25.276"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:23.711" endtime="20230830 22:23:25.276"/>
+</kw>
+<kw name="Type in email" library="resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAILINPUT}</arg>
+<arg>user01@getnada.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230830 22:23:25.277" level="INFO">Typing text 'user01@getnada.com' into text field 'xpath=//*[@id='login']'.</msg>
+<status status="PASS" starttime="20230830 22:23:25.277" endtime="20230830 22:23:25.390"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:25.276" endtime="20230830 22:23:25.390"/>
+</kw>
+<kw name="Type in password" library="resources">
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORDINPUT}</arg>
+<arg>Test-1234</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230830 22:23:25.390" level="INFO">Typing password into text field 'xpath=//*[@id='password']'.</msg>
+<msg timestamp="20230830 22:23:25.406" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230830 22:23:25.437" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230830 22:23:25.390" endtime="20230830 22:23:25.437"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:25.390" endtime="20230830 22:23:25.437"/>
+</kw>
+<kw name="Click dropdown menu" library="resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANGDROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230830 22:23:25.437" level="INFO">Clicking element 'xpath=//form//div[2]/div/div'.</msg>
+<status status="PASS" starttime="20230830 22:23:25.437" endtime="20230830 22:23:25.465"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:25.437" endtime="20230830 22:23:25.465"/>
+</kw>
+<kw name="Choose English Language" library="resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ENGLISHLOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230830 22:23:25.465" level="INFO">Clicking element 'xpath=//div[3]/ul/li[2]'.</msg>
+<status status="PASS" starttime="20230830 22:23:25.465" endtime="20230830 22:23:25.487"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:25.465" endtime="20230830 22:23:25.487"/>
+</kw>
+<kw name="Click log in button" library="resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SIGNINBUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230830 22:23:25.487" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20230830 22:23:25.487" endtime="20230830 22:23:25.743"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:25.487" endtime="20230830 22:23:25.744"/>
+</kw>
+<kw name="Wait for dashboard to open" library="resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ADDPLAYERBUTTON}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230830 22:23:25.744" endtime="20230830 22:23:28.779"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:25.744" endtime="20230830 22:23:28.779"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:23.711" endtime="20230830 22:23:28.779"/>
+</kw>
+<status status="PASS" starttime="20230830 22:23:23.711" endtime="20230830 22:23:28.779"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230830 22:23:31.781" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230830 22:23:28.779" endtime="20230830 22:23:31.782"/>
+</kw>
+<kw name="Assert title of page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ADDPLAYERBUTTON}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230830 22:23:31.783" endtime="20230830 22:23:31.805"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Scouts panel</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230830 22:23:31.983" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230830 22:23:31.983" level="FAIL">Title should have been 'Scouts panel' but was 'PANEL SKAUTINGOWY'.</msg>
+<status status="FAIL" starttime="20230830 22:23:31.805" endtime="20230830 22:23:31.985"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Polski</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20230830 22:23:31.985" endtime="20230830 22:23:31.985"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>alert_login_to_the_system.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20230830 22:23:31.985" endtime="20230830 22:23:31.985"/>
+</kw>
+<status status="FAIL" starttime="20230830 22:23:31.783" endtime="20230830 22:23:31.985"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Log Out And Close The Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Log Out And Close The Browser" library="resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGOUTBUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230830 22:23:31.985" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Sign out') or contains(text(), 'Wyloguj')]'.</msg>
+<msg timestamp="20230830 22:23:32.151" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230830 22:23:32.151" level="FAIL">Element with locator 'xpath=//span[contains(text(), 'Sign out') or contains(text(), 'Wyloguj')]' not found.</msg>
+<status status="FAIL" starttime="20230830 22:23:31.985" endtime="20230830 22:23:32.151"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230830 22:23:32.151" endtime="20230830 22:23:32.222"/>
+</kw>
+<status status="FAIL" starttime="20230830 22:23:31.985" endtime="20230830 22:23:32.222"/>
+</kw>
+<status status="FAIL" starttime="20230830 22:23:31.985" endtime="20230830 22:23:32.222">Element with locator 'xpath=//span[contains(text(), 'Sign out') or contains(text(), 'Wyloguj')]' not found.</status>
+</kw>
+<status status="FAIL" starttime="20230830 22:23:23.711" endtime="20230830 22:23:32.223">Title should have been 'Scouts panel' but was 'PANEL SKAUTINGOWY'.
+
+Also teardown failed:
+Element with locator 'xpath=//span[contains(text(), 'Sign out') or contains(text(), 'Wyloguj')]' not found.</status>
+</test>
+<doc>Suite description</doc>
+<status status="FAIL" starttime="20230830 22:23:23.654" endtime="20230830 22:23:32.223"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Login To The System Rf">Test Login To The System Rf</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
