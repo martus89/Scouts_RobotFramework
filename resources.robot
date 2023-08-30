@@ -79,4 +79,3 @@ Log in to the system with wrong password
     Choose English Language
     Click log in button
     Wait for dashboard to open
-

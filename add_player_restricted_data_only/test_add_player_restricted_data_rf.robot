@@ -24,14 +24,15 @@ Adding Player - Restricted Data Only
 *** Keywords ***
 Click add player button
     Wait Until Element Is Visible   ${ADDPLAYERBUTTON}      timeout=20
-    Click Button    ${ADDPLAYERBUTTON}
+    Click Button                    ${ADDPLAYERBUTTON}
 Fill in the form
     Wait Until Element Is Visible   ${ADDPLAYERFORMNAME}        timeout=20
-    Press Keys      ${ADDPLAYERFORMNAME}        ${SPACE}
-    Press Keys      ${ADDPLAYERFORMSURNAME}     ${SPACE}
-    Press Keys      ${ADDPLAYERFORMPOSITION}    ${SPACE}
-    Input Text      ${ADDPLAYERFORMAGE}         15102024
-    Click Button    ${ADDPLAYERFORMSUBMITBUTTON}
+    Press Keys                      ${ADDPLAYERFORMNAME}        ${SPACE}
+    Press Keys                      ${ADDPLAYERFORMSURNAME}     ${SPACE}
+    Press Keys                      ${ADDPLAYERFORMPOSITION}    ${SPACE}
+    Input Text                      ${ADDPLAYERFORMAGE}         15102024
+    Click Button                    ${ADDPLAYERFORMSUBMITBUTTON}
+    Sleep                           3s
 Assert page redirect
     Wait Until Element Is Visible           ${MATCHESMENUEXTENSION}      timeout=30
     Get Location

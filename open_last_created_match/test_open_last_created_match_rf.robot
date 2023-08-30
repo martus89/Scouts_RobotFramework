@@ -1,7 +1,7 @@
 *** Settings ***
-Library     SeleniumLibrary
+Library         SeleniumLibrary
 Documentation   Suite description
-Resource        resources.robot
+Resource        ../resources.robot
 Test Setup      Run Keywords    Login to the system EN
 Test Teardown   Run Keywords    Log Out And Close The Browser
 
@@ -12,8 +12,8 @@ ${FORMSUBMITBUTTON}             xpath=//button[@type='submit']/span
 *** Test Cases ***
 Open last created match
     Open last created match
+    Sleep                           3s
     Assert element text
-    [Teardown]  Close browser
 
 *** Keywords ***
 Open last created match

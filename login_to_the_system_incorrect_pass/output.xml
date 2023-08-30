@@ -1,90 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.4 on darwin)" generated="20230726 22:51:45.851" rpa="false" schemaversion="3">
-<suite id="s1" name="Test Login To The System Incorrect Pass Rf" source="/Users/martaciesla/PycharmProjects/footballscouts_robotframework/login_to_the_system_incorrect_pass/test_login_to_the_system_incorrect_pass_rf.robot">
-<test id="s1-t1" name="Login to the system" line="13">
-<kw name="Open login page">
+<robot generator="Robot 5.0.1 (Python 3.11.4 on darwin)" generated="20230830 21:13:43.400" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Login To The System Incorrect Pass Rf" source="/Users/martaciesla/PycharmProjects/robot_framework_football/login_to_the_system_incorrect_pass/test_login_to_the_system_incorrect_pass_rf.robot">
+<test id="s1-t1" name="Login to the system wrong password" line="11">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Log in to the system with wrong password</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Log in to the system with wrong password" library="resources">
+<kw name="Open login page" library="resources">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230726 22:51:45.906" level="INFO">Opening browser 'Chrome' to base url 'https://scouts-test.futbolkolektyw.pl/en'.</msg>
-<msg timestamp="20230726 22:51:45.906" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
-<status status="PASS" starttime="20230726 22:51:45.906" endtime="20230726 22:51:47.498"/>
+<msg timestamp="20230830 21:13:43.457" level="INFO">Opening browser 'Chrome' to base url 'https://scouts-test.futbolkolektyw.pl/en'.</msg>
+<status status="PASS" starttime="20230830 21:13:43.457" endtime="20230830 21:13:44.957"/>
 </kw>
-<status status="PASS" starttime="20230726 22:51:45.905" endtime="20230726 22:51:47.498"/>
+<status status="PASS" starttime="20230830 21:13:43.457" endtime="20230830 21:13:44.957"/>
 </kw>
-<kw name="Type in email and password">
+<kw name="Type in email" library="resources">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${EMAILINPUT}</arg>
 <arg>user01@getnada.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230726 22:51:47.498" level="INFO">Typing text 'user01@getnada.com' into text field 'xpath=//*[@id='login']'.</msg>
-<status status="PASS" starttime="20230726 22:51:47.498" endtime="20230726 22:51:47.609"/>
+<msg timestamp="20230830 21:13:44.958" level="INFO">Typing text 'user01@getnada.com' into text field 'xpath=//*[@id='login']'.</msg>
+<status status="PASS" starttime="20230830 21:13:44.958" endtime="20230830 21:13:45.068"/>
 </kw>
+<status status="PASS" starttime="20230830 21:13:44.957" endtime="20230830 21:13:45.068"/>
+</kw>
+<kw name="Type in wrong password" library="resources">
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${PASSWORDINPUT}</arg>
 <arg>Pest-123401332ABC</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230726 22:51:47.609" level="INFO">Typing password into text field 'xpath=//*[@id='password']'.</msg>
-<msg timestamp="20230726 22:51:47.631" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230726 22:51:47.670" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230726 22:51:47.609" endtime="20230726 22:51:47.670"/>
+<msg timestamp="20230830 21:13:45.069" level="INFO">Typing password into text field 'xpath=//*[@id='password']'.</msg>
+<msg timestamp="20230830 21:13:45.085" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230830 21:13:45.122" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230830 21:13:45.069" endtime="20230830 21:13:45.122"/>
 </kw>
-<status status="PASS" starttime="20230726 22:51:47.498" endtime="20230726 22:51:47.670"/>
+<status status="PASS" starttime="20230830 21:13:45.069" endtime="20230830 21:13:45.122"/>
 </kw>
-<kw name="Click submit button">
+<kw name="Click dropdown menu" library="resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANGDROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230830 21:13:45.122" level="INFO">Clicking element 'xpath=//form//div[2]/div/div'.</msg>
+<status status="PASS" starttime="20230830 21:13:45.122" endtime="20230830 21:13:45.147"/>
+</kw>
+<status status="PASS" starttime="20230830 21:13:45.122" endtime="20230830 21:13:45.147"/>
+</kw>
+<kw name="Choose English Language" library="resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ENGLISHLOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230830 21:13:45.148" level="INFO">Clicking element 'xpath=//div[3]/ul/li[2]'.</msg>
+<status status="PASS" starttime="20230830 21:13:45.147" endtime="20230830 21:13:45.169"/>
+</kw>
+<status status="PASS" starttime="20230830 21:13:45.147" endtime="20230830 21:13:45.169"/>
+</kw>
+<kw name="Click log in button" library="resources">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${SIGNINBUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230726 22:51:47.671" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<status status="PASS" starttime="20230726 22:51:47.670" endtime="20230726 22:51:47.707"/>
+<msg timestamp="20230830 21:13:45.169" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20230830 21:13:45.169" endtime="20230830 21:13:45.432"/>
 </kw>
-<status status="PASS" starttime="20230726 22:51:47.670" endtime="20230726 22:51:47.707"/>
+<status status="PASS" starttime="20230830 21:13:45.169" endtime="20230830 21:13:45.432"/>
+</kw>
+<kw name="Wait for dashboard to open" library="resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ADDPLAYERBUTTON}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230830 21:13:45.433" endtime="20230830 21:13:45.452"/>
+</kw>
+<status status="PASS" starttime="20230830 21:13:45.432" endtime="20230830 21:13:45.452"/>
+</kw>
+<status status="PASS" starttime="20230830 21:13:43.457" endtime="20230830 21:13:45.452"/>
+</kw>
+<status status="PASS" starttime="20230830 21:13:43.457" endtime="20230830 21:13:45.452"/>
 </kw>
 <kw name="Assert title of page and error presence">
 <kw name="Get Title" library="SeleniumLibrary">
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" starttime="20230726 22:51:47.707" endtime="20230726 22:51:47.710"/>
+<status status="PASS" starttime="20230830 21:13:45.452" endtime="20230830 21:13:45.455"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${INCORRECTPASSERROR}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230726 22:51:47.711" endtime="20230726 22:51:50.292"/>
+<status status="PASS" starttime="20230830 21:13:45.455" endtime="20230830 21:13:46.970"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <arg>${INCORRECTPASSERROR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" starttime="20230726 22:51:50.292" endtime="20230726 22:51:50.307"/>
+<status status="PASS" starttime="20230830 21:13:46.971" endtime="20230830 21:13:46.986"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Scouts panel - sign in</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230726 22:51:50.309" level="INFO">Page title is 'Scouts panel - sign in'.</msg>
-<status status="PASS" starttime="20230726 22:51:50.307" endtime="20230726 22:51:50.309"/>
+<msg timestamp="20230830 21:13:46.990" level="INFO">Page title is 'Scouts panel - sign in'.</msg>
+<status status="PASS" starttime="20230830 21:13:46.987" endtime="20230830 21:13:46.990"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${INCORRECTPASSERROR}</arg>
 <arg>Identifier or password invalid.</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20230726 22:51:50.309" level="INFO">Verifying element 'xpath=//div[1]/div[3]/span' contains exact text 'Identifier or password invalid.'.</msg>
-<status status="PASS" starttime="20230726 22:51:50.309" endtime="20230726 22:51:50.318"/>
+<msg timestamp="20230830 21:13:46.990" level="INFO">Verifying element 'xpath=//div[1]/div[3]/span' contains exact text 'Identifier or password invalid.'.</msg>
+<status status="PASS" starttime="20230830 21:13:46.990" endtime="20230830 21:13:47.001"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>alert_login_to_the_system_incorrect_pass.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230726 22:51:50.459" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="alert_login_to_the_system_incorrect_pass.png"&gt;&lt;img src="alert_login_to_the_system_incorrect_pass.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230726 22:51:50.318" endtime="20230726 22:51:50.459"/>
+<msg timestamp="20230830 21:13:47.217" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="alert_login_to_the_system_incorrect_pass.png"&gt;&lt;img src="alert_login_to_the_system_incorrect_pass.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230830 21:13:47.001" endtime="20230830 21:13:47.218"/>
 </kw>
-<status status="PASS" starttime="20230726 22:51:47.707" endtime="20230726 22:51:50.459"/>
+<status status="PASS" starttime="20230830 21:13:45.452" endtime="20230830 21:13:47.218"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230830 21:13:49.218" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230830 21:13:47.218" endtime="20230830 21:13:49.219"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230726 22:51:50.459" endtime="20230726 22:51:50.526"/>
+<status status="PASS" starttime="20230830 21:13:49.220" endtime="20230830 21:13:49.294"/>
 </kw>
-<status status="PASS" starttime="20230726 22:51:45.905" endtime="20230726 22:51:50.526"/>
+<status status="PASS" starttime="20230830 21:13:43.456" endtime="20230830 21:13:49.294"/>
 </test>
 <doc>Suite description</doc>
-<status status="PASS" starttime="20230726 22:51:45.852" endtime="20230726 22:51:50.526"/>
+<status status="PASS" starttime="20230830 21:13:43.401" endtime="20230830 21:13:49.294"/>
 </suite>
 <statistics>
 <total>

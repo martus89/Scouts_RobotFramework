@@ -35,5 +35,5 @@ Manually Change Language
 Assert page redirect
     Wait Until Location Contains    en/players
     Page Should Contain             Polski
-    Capture Page Screenshot         alert_matches_per_player_list_lang_switch.png
+    Capture Page Screenshot         download_players_file.png
 

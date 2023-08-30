@@ -1,7 +1,7 @@
 *** Settings ***
-Library     SeleniumLibrary
+Library         SeleniumLibrary
 Documentation   Suite description
-Resource        resources.robot
+Resource        ../resources.robot
 Test Setup      Run Keywords    Log in to the system with wrong password
 
 *** Variables ***
@@ -10,6 +10,7 @@ ${INCORRECTPASSERROR}   xpath=//div[1]/div[3]/span
 *** Test Cases ***
 Login to the system wrong password
     Assert title of page and error presence
+    Sleep                           2s
     [Teardown]  Close browser
 
 *** Keywords ***
