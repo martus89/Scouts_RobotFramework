@@ -2,7 +2,7 @@
 Library         SeleniumLibrary
 
 *** Variables ***
-${LOGIN URL}                    https://scouts-test.futbolkolektyw.pl/en
+${LOGIN URL}                    https://dareit.futbolkolektyw.pl/en
 ${BROWSER}                      Chrome
 ${EMAILINPUT}                   xpath=//*[@id='login']
 ${PASSWORDINPUT}                xpath=//*[@id='password']
